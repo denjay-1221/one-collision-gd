@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bbpuqt34p8o8b"]
+
+[ext_resource type="Script" uid="uid://bpgmic4hip3rc" path="res://main.gd" id="1_3e1xo"]
+[ext_resource type="PackedScene" uid="uid://c772rkpyby48j" path="res://ramp.tscn" id="2_6kv01"]
+
+[sub_resource type="RectangleShape2D" id="floor_shape"]
+size = Vector2(580, 20)
+
+[sub_resource type="PhysicsMaterial" id="slippery"]
+friction = 0.15
+bounce = 0.1
+
+[sub_resource type="CircleShape2D" id="ball_shape"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="box_shape"]
+size = Vector2(36, 36)
+
+[node name="Lab" type="Node2D" unique_id=1183067193]
+script = ExtResource("1_3e1xo")
+
+[node name="Board" type="Polygon2D" parent="." unique_id=150328289]
+position = Vector2(487, 312)
+scale = Vector2(1.7051723, 1.4276594)
+color = Color(0.14, 0.22, 0.32, 1)
+polygon = PackedVector2Array(-290, -235, -4.2105713, -234.99998, 290, -235, 290, 235, 215.94467, 235.00006, -290, 235)
+
+[node name="EndStop" type="StaticBody2D" parent="." unique_id=1528483364]
+position = Vector2(962.055, 312)
+rotation = 1.5708
+scale = Vector2(1.125, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndStop" unique_id=1276327110]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="EndStop" unique_id=467731561]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="EndStop2" type="StaticBody2D" parent="." unique_id=1768228263]
+position = Vector2(-4, 311.99997)
+rotation = 1.5708
+scale = Vector2(1.125, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndStop2" unique_id=1755694259]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="EndStop2" unique_id=1187807302]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Ramp" parent="." unique_id=580703865 instance=ExtResource("2_6kv01")]
+position = Vector2(160.795, 88.665)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=502865539]
+position = Vector2(472, 640)
+scale = Vector2(1.08, 1.51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=452931444]
+scale = Vector2(1.585, 1)
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="Floor" unique_id=1989807037]
+position = Vector2(-0.94644165, 0)
+scale = Vector2(1.5827258, 1)
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1535215404]
+position = Vector2(43, 14)
+physics_material_override = SubResource("slippery")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1900821302]
+shape = SubResource("ball_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ball" unique_id=1956300255]
+color = Color(0.3, 0.9, 0.7, 1)
+polygon = PackedVector2Array(16, 0, 15.22, 4.94, 12.94, 9.4, 9.4, 12.94, 4.94, 15.22, 0, 16, -4.94, 15.22, -9.4, 12.94, -12.94, 9.4, -15.22, 4.94, -16, 0, -15.22, -4.94, -12.94, -9.4, -9.4, -12.94, -4.94, -15.22, 0, -16, 4.94, -15.22, 9.4, -12.94, 12.94, -9.4, 15.22, -4.94)
+
+[node name="Box" type="RigidBody2D" parent="." unique_id=644436810]
+physics_material_override = SubResource("slippery")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=96022655]
+shape = SubResource("box_shape")
+
+[node name="Visual" type="Polygon2D" parent="Box" unique_id=1504908663]
+color = Color(1, 0.64, 0.26, 1)
+polygon = PackedVector2Array(-18, -18, 18, -18, 18, 18, -18, 18)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1948565563]
+
+[node name="Title" type="Label" parent="HUD" unique_id=532956545]
+offset_left = 738.0
+offset_top = 12.0
+offset_right = 930.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 26
+text = "MY CHAIN TEST"
+
+[node name="Instructions" type="Label" parent="HUD" unique_id=998329183]
+offset_left = 975.0
+offset_top = 24.0
+offset_right = 1265.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 18
+text = "Watch the ball meet the box.
+
+Reset to compare a change.
+
+Inspect Ramp, Ball and their collision shapes in the editor."
+autowrap_mode = 2
+
+[node name="Status" type="Label" parent="HUD" unique_id=1544039128]
+offset_left = 976.0
+offset_top = 208.0
+offset_right = 1266.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 18
+text = "Ready"
+autowrap_mode = 2
+
+[node name="Reset" type="Button" parent="HUD" unique_id=117661062]
+offset_left = 974.0
+offset_top = 244.0
+offset_right = 1264.0
+offset_bottom = 281.0
+focus_mode = 0
+text = "Reset example"

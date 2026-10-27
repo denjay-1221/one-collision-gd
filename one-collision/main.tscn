@@ -1,0 +1,559 @@
+[gd_scene format=3 uid="uid://do064ied68q8e"]
+
+[ext_resource type="PackedScene" uid="uid://e4qstrtc8b73" path="res://collide.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bpgmic4hip3rc" path="res://main.gd" id="main"]
+
+[sub_resource type="RectangleShape2D" id="ramp_shape"]
+size = Vector2(238.3476, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpuu5"]
+size = Vector2(142.76488, 83.39052)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0rvh"]
+size = Vector2(164, 247.25928)
+
+[sub_resource type="RectangleShape2D" id="floor_shape"]
+size = Vector2(580, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig7tw"]
+
+[sub_resource type="CircleShape2D" id="ball_shape"]
+radius = 16.0
+
+[sub_resource type="PhysicsMaterial" id="slippery"]
+friction = 0.15
+
+[sub_resource type="RectangleShape2D" id="box_shape"]
+size = Vector2(36, 36)
+
+[node name="Lab" type="Node2D" unique_id=1183067193]
+script = ExtResource("main")
+
+[node name="Ramps" type="Node" parent="." unique_id=1156312723]
+
+[node name="original" type="StaticBody2D" parent="Ramps" unique_id=1648072321]
+position = Vector2(-1108.005, -522.915)
+rotation = 0.12391837
+scale = Vector2(1.215, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/original" unique_id=653086512]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/original" unique_id=1309745481]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="Platformguide" type="StaticBody2D" parent="Ramps" unique_id=1874352951]
+position = Vector2(-204.99988, -549)
+scale = Vector2(0.82, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/Platformguide" unique_id=717988107]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/Platformguide" unique_id=1235714739]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="Rampdown" type="StaticBody2D" parent="Ramps" unique_id=322651244]
+position = Vector2(676.0001, -177.00003)
+rotation = -0.2495821
+scale = Vector2(2.525, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/Rampdown" unique_id=1855244452]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/Rampdown" unique_id=362071199]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="Platform" type="StaticBody2D" parent="Ramps" unique_id=744754635]
+position = Vector2(333, 44)
+scale = Vector2(0.29, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/Platform" unique_id=18453804]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/Platform" unique_id=1225071054]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="RampGuideGravity" type="StaticBody2D" parent="Ramps" unique_id=828451595]
+position = Vector2(-590, -390.00003)
+rotation = -1.9582595
+scale = Vector2(1.44, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/RampGuideGravity" unique_id=962795200]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/RampGuideGravity" unique_id=112153181]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="RampUp" type="StaticBody2D" parent="Ramps" unique_id=1559806271]
+position = Vector2(-303, -210)
+rotation = -0.22689278
+scale = Vector2(1.735, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/RampUp" unique_id=321706070]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/RampUp" unique_id=654949446]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="HoldingSeesaw" type="StaticBody2D" parent="Ramps" unique_id=1180311982]
+position = Vector2(3, 531.00006)
+scale = Vector2(0.12, 8.31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/HoldingSeesaw" unique_id=700162884]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/HoldingSeesaw" unique_id=189569683]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="WallSeparate" type="StaticBody2D" parent="Ramps" unique_id=255166692]
+position = Vector2(285.01, 105.13)
+rotation = 1.5707964
+scale = Vector2(3.58, -0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/WallSeparate" unique_id=577007817]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/WallSeparate" unique_id=1749464038]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="WallSeparate2" type="StaticBody2D" parent="Ramps" unique_id=1069153020]
+position = Vector2(-807, 357)
+rotation = 1.5707964
+scale = Vector2(3.59, 0.63)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/WallSeparate2" unique_id=109647936]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/WallSeparate2" unique_id=992077755]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="AngleHit" type="StaticBody2D" parent="Ramps" unique_id=1118011680]
+position = Vector2(-1449.0001, -1354)
+rotation = 2.2839234
+scale = Vector2(1.44, 0.69000006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/AngleHit" unique_id=205117922]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/AngleHit" unique_id=1942656881]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="Rampslope" type="StaticBody2D" parent="Ramps" unique_id=1065884746]
+position = Vector2(-630.99994, -1254.0001)
+rotation = 0.036651913
+scale = Vector2(5.3699994, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/Rampslope" unique_id=2009616099]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/Rampslope" unique_id=758866333]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="just to besure" type="StaticBody2D" parent="Ramps" unique_id=1484427247]
+position = Vector2(818, -1034)
+rotation = 2.2839234
+scale = Vector2(1.72, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/just to besure" unique_id=1886346789]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/just to besure" unique_id=941869917]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="GuideBall" type="StaticBody2D" parent="Ramps" unique_id=1258219820]
+position = Vector2(25.000122, -924.00006)
+rotation = 0.036651902
+scale = Vector2(5.3699994, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/GuideBall" unique_id=344811574]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/GuideBall" unique_id=1061521414]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="LastBallPlatform" type="StaticBody2D" parent="Ramps" unique_id=569083190]
+position = Vector2(-983.0001, -953.00006)
+scale = Vector2(1.4, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/LastBallPlatform" unique_id=17008569]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/LastBallPlatform" unique_id=1513503359]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="LastBallCeling" type="StaticBody2D" parent="Ramps" unique_id=181713165]
+position = Vector2(-1005, -1074.0002)
+scale = Vector2(1.4, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ramps/LastBallCeling" unique_id=1061398741]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ramps/LastBallCeling" unique_id=1122745897]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)
+
+[node name="Gravity" type="Node" parent="." unique_id=204500174]
+
+[node name="Start" type="Area2D" parent="Gravity" unique_id=1817188608]
+position = Vector2(-958, -538.00006)
+rotation = -0.34353724
+gravity_space_override = 3
+gravity_point_center = Vector2(1, -0.7)
+gravity_direction = Vector2(1, -0.7)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Start" unique_id=1627617091]
+position = Vector2(25.641602, 1.3513489)
+rotation = -0.27545506
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_hpuu5")
+
+[node name="Bounce" type="Area2D" parent="Gravity" unique_id=1806599760]
+position = Vector2(338, -99.00001)
+rotation = 1.5707964
+scale = Vector2(1.885, 1)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Bounce" unique_id=908007348]
+position = Vector2(1.0610237, 0)
+rotation = -0.00036746264
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_hpuu5")
+
+[node name="Fling" type="Area2D" parent="Gravity" unique_id=1827970999]
+position = Vector2(321, -753)
+rotation = 1.5707964
+gravity_space_override = 3
+gravity_point_center = Vector2(-1, 0.3)
+gravity_direction = Vector2(-1, 0.3)
+gravity = 2451.627
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Fling" unique_id=1667586558]
+position = Vector2(-2.400079e-06, 0)
+scale = Vector2(0.36, 0.795)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Push" type="Area2D" parent="Gravity" unique_id=1651796336]
+position = Vector2(-452, -214.00006)
+rotation = -1.8413223
+gravity_space_override = 3
+gravity_point_center = Vector2(1, 0)
+gravity_direction = Vector2(1, 0)
+gravity = 4024.925
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Push" unique_id=105331779]
+position = Vector2(-2.400079e-06, 0)
+scale = Vector2(0.36, 0.795)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Guide1" type="Area2D" parent="Gravity" unique_id=1098307430]
+position = Vector2(-730, 547)
+rotation = 1.5707964
+scale = Vector2(3.195, 0.645)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Guide1" unique_id=1820425883]
+scale = Vector2(0.36, 0.7950001)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Guide2" type="Area2D" parent="Gravity" unique_id=722075805]
+position = Vector2(-735, -191)
+rotation = 1.5707964
+scale = Vector2(3.195, 0.645)
+gravity_space_override = 3
+gravity_point_center = Vector2(-1, 0)
+gravity_direction = Vector2(-1, 0)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Guide2" unique_id=818537393]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.36, 0.7950001)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Guide3" type="Area2D" parent="Gravity" unique_id=1000879742]
+position = Vector2(-1187, 594)
+rotation = 1.5707964
+scale = Vector2(3.195, 0.645)
+gravity_space_override = 3
+gravity_point_center = Vector2(-1, 0)
+gravity_direction = Vector2(-1, 0)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Guide3" unique_id=1456336807]
+position = Vector2(-3.8146973e-06, 0)
+scale = Vector2(0.36, 0.7950001)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Up1" type="Area2D" parent="Gravity" unique_id=624848693]
+position = Vector2(-1389.0001, 539)
+rotation = 1.5707964
+scale = Vector2(3.52, 1.24)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Up1" unique_id=1592803396]
+position = Vector2(0, 15.335378)
+scale = Vector2(0.36, 0.79500026)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Up2" type="Area2D" parent="Gravity" unique_id=1050682801]
+position = Vector2(-1389, -163)
+rotation = 1.5707964
+scale = Vector2(3.475, 1.565)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Up2" unique_id=1220962191]
+position = Vector2(0, 15.335378)
+scale = Vector2(0.36, 0.79500026)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Up3" type="Area2D" parent="Gravity" unique_id=2023933076]
+position = Vector2(-1393, -831)
+rotation = 1.5707964
+scale = Vector2(3.475, 1.565)
+gravity_space_override = 3
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/Up3" unique_id=703337972]
+position = Vector2(0, 15.335378)
+scale = Vector2(0.36, 0.79500026)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="PushFinal" type="Area2D" parent="Gravity" unique_id=1104959266]
+position = Vector2(-1402.0001, -1370.0001)
+rotation = 1.5707964
+scale = Vector2(3.42, 1.1)
+gravity_space_override = 3
+gravity_point_center = Vector2(1, 0)
+gravity_direction = Vector2(1, 0)
+gravity = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/PushFinal" unique_id=1831871113]
+position = Vector2(0, 15.335378)
+scale = Vector2(0.36, 0.79500026)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="ForceEnd" type="Area2D" parent="Gravity" unique_id=204856350]
+position = Vector2(272.00012, -989.99976)
+rotation = 1.60211
+scale = Vector2(2.2250001, 4.6750007)
+gravity_space_override = 3
+gravity_point_center = Vector2(-1, 0.3)
+gravity_direction = Vector2(-1, 0.3)
+gravity = 2451.627
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity/ForceEnd" unique_id=978531182]
+position = Vector2(-2.400079e-06, 0)
+scale = Vector2(0.36, 0.795)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1740974843]
+position = Vector2(-291.59, -394.35)
+scale = Vector2(16.105, 16.105)
+zoom = Vector2(0.38, 0.29)
+
+[node name="Board" type="Polygon2D" parent="." unique_id=150328289]
+position = Vector2(-292.25, -407.7501)
+scale = Vector2(4.378448, 4.5585103)
+color = Color(0.14, 0.22, 0.32, 1)
+polygon = PackedVector2Array(-290, -235, -4.2105713, -234.99998, 290, -235, 290, 235, 215.94467, 235.00006, -290, 235)
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=1768228263]
+position = Vector2(972, -391)
+rotation = 1.5708
+scale = Vector2(3.745, 0.735)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1755694259]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="WallRight" unique_id=1187807302]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="WallLeft1" type="StaticBody2D" parent="." unique_id=1178955334]
+position = Vector2(-1268.0098, -350.17493)
+rotation = 1.5708
+scale = Vector2(2.945, 1.155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft1" unique_id=728452485]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="WallLeft1" unique_id=553406884]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="WallLeft2" type="StaticBody2D" parent="." unique_id=644361478]
+position = Vector2(-1564.0001, -279.00003)
+rotation = 1.5708
+scale = Vector2(3.2, 1.155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft2" unique_id=1014759265]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="WallLeft2" unique_id=1728752274]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Bucketwall" type="StaticBody2D" parent="." unique_id=429478778]
+position = Vector2(806.00006, 682)
+rotation = 1.5708
+scale = Vector2(0.17, 1.155)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bucketwall" unique_id=274445202]
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="Bucketwall" unique_id=1734995629]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=502865539]
+position = Vector2(-375.075, 640)
+scale = Vector2(2.585, 0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=452931444]
+scale = Vector2(1.585, 1)
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="Floor" unique_id=1989807037]
+position = Vector2(-0.94644165, 0)
+scale = Vector2(1.5827258, 1)
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="BucketFloor" type="StaticBody2D" parent="." unique_id=1167735971]
+position = Vector2(896.99994, 712.99994)
+scale = Vector2(-0.19, 0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BucketFloor" unique_id=1898726099]
+scale = Vector2(1.585, 1)
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="BucketFloor" unique_id=2131263216]
+position = Vector2(-0.94644165, 0)
+scale = Vector2(1.5827258, 1)
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Celing" type="StaticBody2D" parent="." unique_id=1392901736]
+position = Vector2(-292.00003, -1486)
+scale = Vector2(2.915, 0.76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Celing" unique_id=1988068830]
+scale = Vector2(1.585, 1)
+shape = SubResource("floor_shape")
+
+[node name="Visual" type="Polygon2D" parent="Celing" unique_id=98574374]
+position = Vector2(-0.94644165, 0)
+scale = Vector2(1.5827258, 1)
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-290, -10, 290, -10, 290, 10, -290, 10)
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1535215404]
+position = Vector2(-1215, -716)
+mass = 2.628
+physics_material_override = SubResource("PhysicsMaterial_ig7tw")
+gravity_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1900821302]
+shape = SubResource("ball_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ball" unique_id=1956300255]
+color = Color(0.3, 0.9, 0.7, 1)
+polygon = PackedVector2Array(16, 0, 15.22, 4.94, 12.94, 9.4, 9.4, 12.94, 4.94, 15.22, 0, 16, -4.94, 15.22, -9.4, 12.94, -12.94, 9.4, -15.22, 4.94, -16, 0, -15.22, -4.94, -12.94, -9.4, -9.4, -12.94, -4.94, -15.22, 0, -16, 4.94, -15.22, 9.4, -12.94, 12.94, -9.4, 15.22, -4.94)
+
+[node name="Ball2" type="RigidBody2D" parent="." unique_id=441256895]
+position = Vector2(-1149, -985)
+mass = 0.193
+physics_material_override = SubResource("PhysicsMaterial_ig7tw")
+gravity_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball2" unique_id=25467385]
+shape = SubResource("ball_shape")
+
+[node name="Visual" type="Polygon2D" parent="Ball2" unique_id=1566959807]
+color = Color(0.3, 0.9, 0.7, 1)
+polygon = PackedVector2Array(16, 0, 15.22, 4.94, 12.94, 9.4, 9.4, 12.94, 4.94, 15.22, 0, 16, -4.94, 15.22, -9.4, 12.94, -12.94, 9.4, -15.22, 4.94, -16, 0, -15.22, -4.94, -12.94, -9.4, -9.4, -12.94, -4.94, -15.22, 0, -16, 4.94, -15.22, 9.4, -12.94, 12.94, -9.4, 15.22, -4.94)
+
+[node name="Box" type="RigidBody2D" parent="." unique_id=644436810]
+position = Vector2(-209, 392)
+mass = 0.001
+physics_material_override = SubResource("slippery")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=96022655]
+shape = SubResource("box_shape")
+
+[node name="Visual" type="Polygon2D" parent="Box" unique_id=1504908663]
+color = Color(1, 0.64, 0.26, 1)
+polygon = PackedVector2Array(-18, -18, 18, -18, 18, 18, -18, 18)
+
+[node name="Seesaw" parent="." unique_id=196759473 instance=ExtResource("2_0xm2m")]
+position = Vector2(2, 428)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1948565563]
+
+[node name="Instructions" type="Label" parent="HUD" unique_id=998329183]
+custom_minimum_size = Vector2(1.03, 0)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 582.0
+offset_top = 12.0
+offset_right = -52.0
+offset_bottom = -499.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Just slow and steady"
+horizontal_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="Reset" type="Button" parent="HUD" unique_id=117661062]
+offset_left = 870.0
+offset_top = 27.0
+offset_right = 924.0
+offset_bottom = 64.0
+focus_mode = 0
+text = "Reset"

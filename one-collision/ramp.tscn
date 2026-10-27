@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c772rkpyby48j"]
+
+[sub_resource type="RectangleShape2D" id="ramp_shape"]
+size = Vector2(238.3476, 20)
+
+[node name="Ramp" type="StaticBody2D" unique_id=580703865]
+rotation = 0.14486232
+scale = Vector2(1.215, 0.69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087105199]
+position = Vector2(-0.23721313, -4.5776367e-05)
+shape = SubResource("ramp_shape")
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=1671734021]
+color = Color(0.45, 0.56, 0.65, 1)
+polygon = PackedVector2Array(-120, -10, 120, -10, 120, 10, -120, 10)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://e4qstrtc8b73"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0rvh"]
+size = Vector2(541, 12)
+
+[node name="Domino" type="RigidBody2D" unique_id=18826879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1466377617]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_o0rvh")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1036056199]
+position = Vector2(0.5000036, 1.1920929e-07)
+scale = Vector2(90.16667, 2)
+polygon = PackedVector2Array(-3, -3, -0.016667366, -3, 3, -3, 3, 3, -0.0055453256, 3.0000002, -0.24508667, 3, -3, 3, -3, -0.014135361)
